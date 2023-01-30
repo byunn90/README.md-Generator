@@ -47,6 +47,11 @@ inquirer
       name: "Contact me",
       message: "Please provide your contact details",
     },
+    {
+      type: "input",
+      name: "Contact me",
+      message: "Please provide your contact details",
+    },
   ])
   .then((data) => {
     fs.writeFile("README.md", JSON.stringify(data, null, "\t"), (error) => {
