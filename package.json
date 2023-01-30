@@ -1,7 +1,7 @@
 {
   "name": "3192",
   "version": "1.0.0",
-  "description": "",
+  "description": "{ \t\"name\": \"Motivation\", \t\"Description\": \"objective of this work was to come up with a responsive website so users who own iphones, iphone SE, iphones XR, iphones 12 Pro and desktop. Making the design responsive has helped our website become more mobile friendly and increasing users screen time for our website.\", \t\"Built with\": [ \t\t\"HTML\", \t\t\"CSS\", \t\t\"JavaScript\", \t\t\"MySQL\", \t\t\"Node.js\", \t\t\"React.js\", \t\t\"BootStrap\", \t\t\"MongoDB\" \t], \t\"Installation\": \"git clone git@github.com:byunn90/Readme.generator\", \t\"Contact me\": \"kayhanturk90@live.com\" }",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

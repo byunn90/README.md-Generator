@@ -12,31 +12,43 @@ inquirer
         if (a) {
           return true;
         } else {
-          return "Must type something in to continue";
+          return "You can not continue without typing a title";
         }
       },
     },
     {
       type: "input",
-      name: "name",
-      message: "Would you like to enter a description?",
-      validate: (a) => {
-        if (a) {
-          return true;
-        } else {
-          return;
-        }
-      },
+      name: "Description",
+      message: "What would you like to put in the description?",
+      //   validate: confirm,
     },
     {
       type: "checkbox",
-      message: "What technologies did you use?",
-      name: "stack",
-      choices: ["HTML", "CSS", "JavaScript", "MySQL"],
+      message: "Which technologies did you build it with?",
+      name: "Built with",
+      choices: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MySQL",
+        "Node.js",
+        "React.js",
+        "BootStrap",
+        "MongoDB",
+      ],
+    },
+    {
+      type: "input",
+      name: "Installation",
+      message: "Please provide the installation",
+    },
+    {
+      type: "input",
+      name: "Contact me",
+      message: "Please provide your contact details",
     },
   ])
   .then((data) => {
-    console.log(data);
     fs.writeFile("README.md", JSON.stringify(data, null, "\t"), (error) => {
       error ? console.log(error) : console.log("success");
     });
