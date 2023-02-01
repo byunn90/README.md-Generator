@@ -5,39 +5,81 @@ const fs = require("fs");
 // wanna create spaces in the readme file when selected choices are selected.
 const readMeGeneratorFile = ({
   projectTitle,
+  badge,
   userName,
   description,
   technologiesUsed,
   Installation,
+  test,
+  usage,
+  contributers,
   contactMe,
   github,
+  linkdn,
   email,
 }) =>
   `
-  # 🏆 ${projectTitle}
+# 🏆 ${projectTitle}
+${
+  badge === "Apache"
+    ? "Apache" +
+      "" +
+      "<br>" +
+      "" +
+      "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    : badge === "MIT"
+    ? "MIT" +
+      "" +
+      "<br>" +
+      "" +
+      "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    : badge === "IBM"
+    ? "IBM" +
+      "" +
+      "<br>" +
+      "" +
+      "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
+    : "Perl" +
+      "" +
+      "<br>" +
+      "" +
+      "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"
+}
 
-  ## Description
 
-  ${description}
+## Description
 
- ## Table of Contents 
+${description}
+
+## Table of Contents 
 * [Installation](#Installation)
 * [Usage](#usage)
 * [technologiesUsed](#technologies-Used)
 * [tests](#Tests)
 * [contactMe](#Contact-Me)
 
-  # Technologies-Used:
+## Technologies-Used:
 
-  ${technologiesUsed.map((data) => data).join("\n")}
+${technologiesUsed.map((data) => data).join("\n", "\n")}
 
-  # Installation:
+## Installation:
 
-  ${Installation}
+${Installation}
+
+## tests
+${test}
   
-  # Contact-Details
-   💾 https://github.com/${github}\n
-   📧 ${email}
+## Usage
+${usage}
+
+## Contributing
+${contributers}
+
+## Contact-Details
+
+💾 https://github.com/${github}
+📧 ${email}
+👷‍♀️  https://www.linkedin.com/in/${linkdn}-5423b4262/
 `;
 
 inquirer
@@ -53,6 +95,12 @@ inquirer
           return "You can not continue without typing a title";
         }
       },
+    },
+    {
+      type: "list",
+      message: "Please select one of these licenses: ",
+      name: "badge",
+      choices: ["Apache", "IBM", "MIT", "Perl"],
     },
     {
       type: "input",
@@ -78,6 +126,23 @@ inquirer
       type: "input",
       name: "Installation",
       message: "Please provide the installation procedures?",
+    },
+    {
+      type: "input",
+      name: "test",
+      message: "What tests did you run for your application?",
+    },
+    {
+      type: "input",
+      name: "contributers",
+      message:
+        "Where there other developers who contributed to the your application?",
+    },
+    {
+      type: "input",
+      name: "linkdn",
+      message:
+        "Please provide your first and last name for your lindn e.g(kayhan-mamak)",
     },
     {
       type: "input",
