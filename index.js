@@ -1,12 +1,33 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { type } = require("os");
+
+const readMeGeneratorFile = ({
+  ProjectTitle,
+  descriptionName,
+  technologiesUsed,
+  Installation,
+  contactMe,
+}) => `
+  # ${ProjectTitle}
+
+  ##${descriptionName}
+
+  ## Technologies Used:
+
+  ${technologiesUsed}
+
+  ## Installation used:
+ ${Installation}\n
+  ## Contact Details
+  
+  ${contactMe}
+`;
 
 inquirer
   .prompt([
     {
       type: "input",
-      name: "name",
+      name: "ProjectTitle",
       message: "What is the project title name?",
       validate: (a) => {
         if (a) {
@@ -20,12 +41,11 @@ inquirer
       type: "input",
       name: "Description",
       message: "What would you like to put in the description?",
-      //   validate: confirm,
     },
     {
       type: "checkbox",
       message: "Which technologies did you build it with?",
-      name: "Built with",
+      name: "technologiesUsed",
       choices: [
         "HTML",
         "CSS",
@@ -44,17 +64,13 @@ inquirer
     },
     {
       type: "input",
-      name: "Contact me",
-      message: "Please provide your contact details",
-    },
-    {
-      type: "input",
-      name: "Contact me",
+      name: "contactMe",
       message: "Please provide your contact details",
     },
   ])
   .then((data) => {
-    fs.writeFile("README.md", JSON.stringify(data, null, "\t"), (error) => {
+    const myReadmeFile = readMeGeneratorFile(data);
+    fs.writeFile("README.md", myReadmeFile, (error) => {
       error ? console.log(error) : console.log("success");
     });
   });
