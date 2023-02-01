@@ -1,33 +1,50 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
+// Issues
+// Cant get them to write the file name
+// wanna create spaces in the readme file when selected choices are selected.
 const readMeGeneratorFile = ({
-  ProjectTitle,
-  descriptionName,
+  projectTitle,
+  userName,
+  description,
   technologiesUsed,
   Installation,
   contactMe,
-}) => `
-  # ${ProjectTitle}
+  github,
+  email,
+}) =>
+  `
+  # 🏆 ${projectTitle}
 
-  ##${descriptionName}
+  ## Description
 
-  ## Technologies Used:
+  ${description}
 
-  ${technologiesUsed}
+ ## Table of Contents 
+* [Installation](#Installation)
+* [Usage](#usage)
+* [technologiesUsed](#technologies-Used)
+* [tests](#Tests)
+* [contactMe](#Contact-Me)
 
-  ## Installation used:
- ${Installation}\n
-  ## Contact Details
+  # Technologies-Used:
+
+  ${technologiesUsed.map((data) => data).join("\n")}
+
+  # Installation:
+
+  ${Installation}
   
-  ${contactMe}
+  # Contact-Details
+   💾 https://github.com/${github}\n
+   📧 ${email}
 `;
 
 inquirer
   .prompt([
     {
       type: "input",
-      name: "ProjectTitle",
+      name: "projectTitle",
       message: "What is the project title name?",
       validate: (a) => {
         if (a) {
@@ -39,7 +56,7 @@ inquirer
     },
     {
       type: "input",
-      name: "Description",
+      name: "description",
       message: "What would you like to put in the description?",
     },
     {
@@ -60,17 +77,25 @@ inquirer
     {
       type: "input",
       name: "Installation",
-      message: "Please provide the installation",
+      message: "Please provide the installation procedures?",
     },
     {
       type: "input",
-      name: "contactMe",
-      message: "Please provide your contact details",
+      name: "github",
+      message: "Please provide your github Username",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please provide your email",
     },
   ])
+
   .then((data) => {
+    // const readMeFileName = data.readMeFileName;
+
     const myReadmeFile = readMeGeneratorFile(data);
-    fs.writeFile("README.md", myReadmeFile, (error) => {
+    fs.writeFile(`readMe.md`, myReadmeFile, (error) => {
       error ? console.log(error) : console.log("success");
     });
   });
