@@ -6,14 +6,12 @@ const fs = require("fs");
 const readMeGeneratorFile = ({
   projectTitle,
   badge,
-  userName,
   description,
   technologiesUsed,
   Installation,
   test,
   usage,
   contributers,
-  contactMe,
   github,
   linkdn,
   email,
@@ -33,19 +31,21 @@ ${
       "<br>" +
       "" +
       "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-    : badge === "IBM"
-    ? "IBM" +
+    : badge === "IPL"
+    ? "IPL" +
       "" +
       "<br>" +
       "" +
       "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"
-    : "Perl" +
-      "" +
-      "<br>" +
-      "" +
-      "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"
+    : badge ===
+      "Perl" +
+        "" +
+        "<br>" +
+        "" +
+        "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"
 }
 
+![alt text](./README.md-Generator/images/kayhan-Weather-App.png)
 
 ## Description
 
@@ -79,6 +79,7 @@ ${contributers}
 
 💾 https://github.com/${github}
 📧 ${email}
+
 👷‍♀️  https://www.linkedin.com/in/${linkdn}-5423b4262/
 `;
 
