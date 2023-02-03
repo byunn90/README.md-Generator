@@ -13,6 +13,7 @@ const readMeGeneratorFile = ({
   usage,
   contributers,
   github,
+  lisence,
   linkdn,
   email,
 }) =>
@@ -72,6 +73,8 @@ ${test}
 ## Usage
 ${usage}
 
+## Lisence used:
+  ${lisence}
 ## Contributing
 ${contributers}
 
@@ -104,6 +107,12 @@ inquirer
       choices: ["Apache", "IBM", "MIT", "Perl"],
     },
     {
+      type: "list",
+      message: "What lisence did you pick?: ",
+      name: "lisence",
+      choices: ["None", "Actionscript", "Ada", "Agda", "Android", "AppEngine"],
+    },
+    {
       type: "input",
       name: "description",
       message: "What would you like to put in the description?",
@@ -132,6 +141,11 @@ inquirer
       type: "input",
       name: "test",
       message: "What tests did you run for your application?",
+    },
+    {
+      type: "input",
+      name: "usage",
+      message: "How would you use this application?",
     },
     {
       type: "input",
