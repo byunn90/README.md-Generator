@@ -1,12 +1,10 @@
 
 # 🏆 Horses
-false
-
-![alt text](./README.md-Generator/images/kayhan-Weather-App.png)
+Apache<br>[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
-The horse is a domesticated, one-toed, Hoofed mamal. It belongs to the taxonmic family Equidae and is one of two extant subspecies of Equus ferus. The horse has evoled over the past 45 to 55 million years 
+Horses have oval-shaped hooves, long tails, short hair, long slender legs, muscular and deep torso build, long thick necks, and large elongated heads. The mane is a region of coarse hairs, which extends along the dorsal side of the neck in both domestic and wild species.
 
 ## Table of Contents 
 * [Installation](#Installation)
@@ -28,20 +26,22 @@ MongoDB
 
 ## Installation:
 
-npm init, npm install inqurerier 8.2.4
+npm install, npm init, npm install inqurerier@8.2.4
 
 ## tests
-
+currently there have been no procedures tested yet.
   
 ## Usage
-undefined
+if i was a developer and i was really lazy to make my own readme filies then yes i would use this application
 
+## Lisence used:
+  AppEngine
 ## Contributing
-Rahim alwer, Alyshia, Kunal, Jordan West
+rahim, jordan, kunal, alyshia
 
 ## Contact-Details
 
 💾 https://github.com/byunn90
-📧 kayhan_mamal@hotmail.com
+📧 kayhan_mamak@hotmail.com
 
 👷‍♀️  https://www.linkedin.com/in/kayhan-mamak-5423b4262/
