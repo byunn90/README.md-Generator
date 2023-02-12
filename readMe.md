@@ -4,7 +4,7 @@
 
 application for generating readME.md file with automatic template you can use
 helps with developers specially for developers who are lazy and cant be bothered
-making there own readME.md file.
+making there own readME.md file template.
 
 ## Table of Contents
 
