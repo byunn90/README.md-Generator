@@ -173,7 +173,7 @@ inquirer
     // const readMeFileName = data.readMeFileName;
 
     const myReadmeFile = readMeGeneratorFile(data);
-    fs.writeFile(`readMe.md`, myReadmeFile, (error) => {
+    fs.writeFile(`./dist/readME.md`, myReadmeFile, (error) => {
       error ? console.log(error) : console.log("success");
     });
   });
